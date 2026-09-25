@@ -19,7 +19,7 @@ A live run on 65 widely used compiled packages found **18 without an installable
 It needs only the Python standard library, with no install and no token:
 
 ```bash
-curl -O https://raw.githubusercontent.com/DasPechCodeWeg/py315ready/HEAD/py315ready.py
+curl -O https://raw.githubusercontent.com/DasPechCodeWeg/MoneyMaker2/HEAD/py315ready.py
 python3 py315ready.py -r requirements.txt           # Markdown table
 python3 py315ready.py -r requirements.txt --format json
 python3 py315ready.py numpy torch pyyaml            # ad-hoc names
@@ -30,7 +30,7 @@ The exit code is `1` when anything is `BLOCKED` or `NO-WHEEL`, so it can gate CI
 As a GitHub Action:
 
 ```yaml
-- uses: DasPechCodeWeg/py315ready@HEAD
+- uses: DasPechCodeWeg/MoneyMaker2@opus-m3/py315ready
   with:
     requirements: requirements.txt
 ```
