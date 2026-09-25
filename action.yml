@@ -1,0 +1,18 @@
+name: py315ready
+description: Fail CI when a dependency has no installable wheel for Python 3.15
+branding: {icon: check-circle, color: green}
+inputs:
+  requirements:
+    description: Path to a requirements file
+    default: requirements.txt
+  lenient:
+    description: "true = fail only on BLOCKED packages"
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        args=(-r "${{ inputs.requirements }}")
+        [ "${{ inputs.lenient }}" = "true" ] && args+=(--lenient)
+        python3 "${{ github.action_path }}/py315ready.py" "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
