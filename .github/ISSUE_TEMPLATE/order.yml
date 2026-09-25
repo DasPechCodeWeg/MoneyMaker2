@@ -1,5 +1,5 @@
 name: Order
-description: Order an upgrade audit, an unblock PR, or a watch. You pay only after delivery.
+description: Order an upgrade audit or an unblock PR. Nothing is binding until the account holder accepts in this issue. You pay only after delivery.
 title: "[order] "
 labels: [order]
 body:
@@ -10,7 +10,6 @@ body:
       options:
         - Upgrade audit (USD 29, pay after delivery)
         - Unblock PR (USD 149, pay after delivery)
-        - Watch (USD 9/month)
     validations: {required: true}
   - type: input
     id: repo
@@ -28,5 +27,5 @@ body:
     attributes:
       label: Terms
       options:
-        - label: I understand the deliverable is produced with an AI coding agent, comes with evidence, and I pay via GitHub Sponsors only if I am satisfied.
+        - label: I understand that one person delivers this using an AI coding agent, that nothing is binding until they accept in this issue, and that I pay only after delivery and only if I am satisfied.
           required: true

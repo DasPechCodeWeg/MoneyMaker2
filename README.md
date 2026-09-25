@@ -12,7 +12,7 @@
 | `BLOCKED` | The package's `Requires-Python` excludes 3.15 |
 | `ERROR` | The package was not found on PyPI, or a network error occurred |
 
-A live run on 65 widely used compiled packages found **18 without an installable 3.15 wheel**, among them `torch`, `tensorflow`, `pyarrow`, `aiohttp`, `pyyaml`, `markupsafe`, `duckdb` and `numba`. See [SAMPLE_REPORT.md](SAMPLE_REPORT.md), which you can regenerate yourself with the command in its header.
+A live run on 2026-09-25 against 65 widely used compiled packages found **18 without an installable 3.15 wheel**, among them `torch`, `tensorflow`, `pyarrow`, `aiohttp`, `pyyaml`, `markupsafe`, `duckdb` and `numba`. See [SAMPLE_REPORT.md](SAMPLE_REPORT.md), which you can regenerate yourself with the command in its header.
 
 ## Use it (free, MIT)
 
@@ -39,20 +39,25 @@ It has limits. It checks the latest *final* release on PyPI, not pre-releases, p
 
 ## Paid help: you pay only after delivery
 
-If the report shows a red row and you would rather not spend the afternoon on it:
+**Who delivers:** the holder of this GitHub account, `DasPechCodeWeg`. That is one person, not a company or a team. The work is done with an AI coding agent (Claude).
 
 | Service | Price | What you get |
 | --- | --- | --- |
-| **Upgrade audit** | **USD 29** one-time | We run the check against your requirements or lock file (up to 150 packages). For every `NO-WHEEL`, `SDIST-ONLY` or `BLOCKED` package you get the concrete way out: a version pin, the upstream issue or PR that tracks 3.15 wheels, a drop-in alternative, or the build flags and system packages the source build needs. Delivered as a Markdown file within 2 business days. |
-| **Unblock PR** | **USD 149** one-time | A pull request to **your own** repository that makes it pass on Python 3.15. It adds 3.15 to the CI matrix and fixes what breaks. For projects that ship extensions, it also includes a `cibuildwheel` config that builds `cp315` and `cp315t` wheels. You get CI logs as evidence. |
-| **Watch** | **USD 9** per month | Up to 5 requirements files are re-checked weekly. An issue is opened in a repository you choose when something changes. |
+| **Upgrade audit** | **USD 29** | For a requirements or lock file you post (up to 150 packages): the py315ready table, plus the evidence and one concrete option for each package that is not `READY`. The option is a version pin, the upstream issue or PR tracking 3.15 wheels, an alternative package, or what a source build needs. It is posted as a comment in your issue. |
+| **Unblock PR** | **USD 149** | For a **public** repository **you own**: a pull request that adds Python 3.15 to CI and tries to fix what breaks. For projects with compiled extensions, it also adds a `cibuildwheel` configuration for `cp315` and `cp315t` wheels. If CI does not pass on 3.15, you owe nothing. |
 
-**How ordering works:**
-1. Open an issue with the **"Order"** form in this repository. You can link a public repo or paste the requirements. Do not paste secrets.
-2. You receive the deliverable in that issue, or as a PR to your repo.
-3. If you are satisfied, pay through [GitHub Sponsors](https://github.com/sponsors/DasPechCodeWeg) as a one-time sponsorship of the matching tier. If you are not satisfied, you pay nothing.
+**How an order works:**
+1. Open an issue in this repository using the **Order** form.
+2. The account holder replies in that issue to **accept or decline**. Nothing is binding before that reply, no work starts before it, and the reply states the delivery date. If nobody replies, there is no order and you owe nothing.
+3. The audit is delivered in the issue. The unblock work is delivered as a PR to your repository.
+4. The delivery comment says how to pay. You pay **only if you are satisfied**, and you never pay in advance.
 
-**Disclosure:** deliverables are produced with an AI coding agent. Every claim in a deliverable comes with its evidence, such as a PyPI file listing, an upstream link or a CI log, so you can verify it before paying. We only open PRs on repositories whose owner ordered one.
+**What this is not:**
+- It is no guarantee that upstream projects will publish 3.15 wheels.
+- There is no work on repositories you do not own, and no private repositories.
+- We never ask for your tokens or secrets.
+
+Every claim in a deliverable links to its evidence, such as a PyPI file listing, an upstream issue or a CI log, so you can check it before paying.
 
 ## Development
 
